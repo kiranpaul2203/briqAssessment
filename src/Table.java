@@ -15,13 +15,13 @@ driver.manage().window().maximize();
 int ColCount = driver.findElements(By.xpath("//table/tbody/tr[1]/td")).size();
 int RowCount = driver.findElements(By.xpath("//table/tbody/tr")).size();
 
-for (int i=1; i<=1; i++){
+for (int i=1; i<=ColCount; i++){
 	String HeadxPath = "//table/thead/tr/th["+i+"]";
 	String HeadData = driver.findElement(By.xpath(HeadxPath)).getText();
-	System.out.print(HeadData +"  ");
+	System.out.print(HeadData +"       ");
 }
 
-System.out.println("\\n");
+System.out.println();
 
 for (int i=1; i<=RowCount; i++){
 	for(int j=1; j<=ColCount; j++){
@@ -29,11 +29,10 @@ for (int i=1; i<=RowCount; i++){
 		String TableData = driver.findElement(By.xpath(tablexPath)).getText();
 		System.out.print(TableData +"  ");  	
 	}
-	System.out.println("");
-	   System.out.println(""); 
+	System.out.println(""); 
 	
 }
-driver.quit();
+//driver.quit();
 	}
 	
 
